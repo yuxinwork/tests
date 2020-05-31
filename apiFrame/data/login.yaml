@@ -1,0 +1,36 @@
+#用户登录成功
+url: http://127.0.0.1:5000/login/
+method: post
+data:
+  username: 末雨
+  password: admin
+  age: 28
+  sex: 男
+expect: 末雨
+
+---
+url: http://127.0.0.1:5000/login/
+method: post
+data:
+  password: admin
+  age: 18
+  sex: 男
+expect: 用户名不能为空
+
+---
+url: http://127.0.0.1:5000/login/
+method: post
+data:
+  password: admin
+  age: ss
+  sex: 男
+expect: 年龄必须为数字
+
+---
+url: http://127.0.0.1:5000/login/
+method: post
+data:
+  password: admin
+  age: ss
+  sex: 男
+expect: 性别只能是男或⼥
